@@ -6,17 +6,41 @@ namespace Aula_09_Calculadora
     {
         static void Main(string[] args)
         {
+            Calculadora calcular = new Calculadora();
+
             Adicao somar = new Adicao();
+            Subtracao subtrair = new Subtracao();
+            Multiplicacao multiplicar = new Multiplicacao();
+            Divisao dividir = new Divisao();
+            Media mediar = new Media();
 
-            System.Console.WriteLine("Somar");
-            System.Console.WriteLine();
 
-            System.Console.WriteLine("Insira o primeiro valor: ");
-            somar.valor1 = Int32.Parse(System.Console.ReadLine());
-            System.Console.WriteLine("Insira o segundo valor: ");
-            somar.valor2 = Int32.Parse(System.Console.ReadLine());
+            Console.WriteLine("Para subtração digite -, divisão /, multiplicação x, e média 0, e para média nada.");
 
-            System.Console.WriteLine($"Valor da soma = {somar.soma()}");
+            switch (calcular.calculo){
+
+
+                case "x":
+                multiplicar.multiplica();
+                break;
+
+                case "/":
+                dividir.divide();
+                break;
+
+                case "-":
+                subtrair.subtrai();
+                break;
+
+                case "0":
+                mediar.mediaV();
+                break;
+                
+                default: 
+                somar.soma();
+                break;
         }
+        Console.ReadLine();
     }
+}
 }
